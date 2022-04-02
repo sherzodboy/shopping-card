@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+* {
+   font-family: 'Roboto Condensed', sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   scroll-behavior: smooth;
+   scroll-padding-top: 2rem;
+   list-style: none;
+   text-decoration: none;
+}
+:root {
+   --main-color: #fd4646;
+   --text-color: #171427;
+   --bg-color: #fff;
+}
+body {
+   color: var(--text-color);
+   font-weight: bold;
+}
+.container{
+   max-width: 1068px;
+   margin: auto;
+   width: 100%;
+}
+section {
+   padding: 4rem 0 3rem;
+}
+header {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   background: var(--bg-color);
+   box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+   z-index: 100;
+}
+.nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 20px 0;
+}
+.logo {
+   font-size: 1.1rem;
+   color: var(--text-color);
+   font-weight: 800;
+}
+#card-icon {
+   font-size: 1.8rem;
+   cursor: pointer;
+}
+.card {
+   position: fixed;
+   top: 0;
+   right: -100%;
+   width: 400px;
+   min-height: 100vh;
+   padding: 20px;
+   background: var(--bg-color);
+   box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
+   transition: 0.3s;
+}
+.card.active {
+   right: 0;
+}
+.card-title {
+   text-align: center;
+   font-size: 1.5rem;
+   font-weight: 900;
+   margin-top: 2rem;
+}
+.card-box {
+   display: grid;
+   grid-template-columns: 32% 50% 18%;
+   align-items: center;
+   gap: 1rem;
+   margin-bottom: 1rem;
+}
+.card-img {
+   width: 110px;
+   height: 110px;
+   object-fit: contain;
+   padding: 10px;
+}
+.detail-box {
+   display: grid;
+   row-gap: 0.5rem;
+}
+.card-product-title {
+   font-size: 1.2rem;
+   text-transform: uppercase;
+}
+.card-price {
+   font-weight: 700;
+}
+.card-quantity {
+   border: 1px solid var(--text-color);
+   outline-color: var(--main-color);
+   width: 2.4rem;
+   text-align: center;
+   font-size: 1rem;
+}
+.card-remove {
+   font-size: 24px;
+   color: var(--main-color);
+   cursor: pointer;
+}
+.total {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: 1.5rem;
+   border-top: 1px solid var(--text-color);
+}
+.total-title {
+   font-size: 1rem;
+   font-weight: 800;
+}
+.total-price {
+   margin-left: 0.5rem;
+}
+.btn-buy {
+   display: flex;
+   margin: 1.5rem auto 0 auto;
+   padding: 8px 18px;
+   border: none;
+   background: var(--main-color);
+   color: var(--bg-color);
+   font-size: 1rem;
+   font-weight: 700;
+   cursor: pointer;
+   border-radius: 4px;
+}
+.btn-buy:hover {
+   background: var(--text-color);
+}
+.btn-buy:active {
+   transform: scale(0.98);
+}
+.btn-buy:focus {
+   outline: none;
+}
+#close-card {
+   position: absolute;
+   top: 1rem;
+   right: 0.8rem;
+   font-size: 2.2rem;
+   cursor: pointer;
+   color: var(--text-color);
+}
+.section-title {
+   font-size: 1.5rem;
+   font-weight: 900;
+   text-align: center;
+   margin-bottom: 1.5rem;
+}
+.shop {
+   margin-top: 2rem;
+}
+.shop-content {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+   gap: 1.5rem;
+}
+.product-box {
+   position: relative;
+   margin: 5px;
+}
+.product-box:hover {
+   margin: -10px; 
+   border: 2px solid var(--text-color);   
+   transition: margin 0.4s;
+   border-radius: 5px;
+}
+.product-img {
+   width: 100%;
+   height: auto;
+   margin-bottom: 0.5rem;
+}
+.product-title {
+   font-size: 1.1rem;
+   font-weight: 900;
+   text-transform: uppercase;
+   margin: 0 10px;
+}
+.price {
+   font-weight: 800;
+   margin: 0 10px;
+}
+.add-card {
+   position: absolute;
+   cursor: pointer;
+   bottom: 0;
+   right: 0;
+   background: var(--text-color);
+   color: var(--bg-color);
+   padding: 10px;
+}
+.add-card:hover {
+   background: hsl(249, 32%, 17%)
+}
+@media(max-width: 1080px){
+   .nav {
+      padding: 15px;
+   }
+   section {
+      padding: 3rem 0 2rem;
+   }
+   .container {
+      margin: 0 auto;
+      width: 90%;
+   }
+   .shop {
+      margin-top: 2rem !important;
+   }
+}
+@media(max-width: 400px){
+   .nav {
+      padding: 11px;
+   }
+   .logo {
+      font-size: 1rem;
+   }
+}
+@media(max-width: 376px){
+   .shop {
+      margin-top: 1rem !important;
+   }
+   .card {
+      width: 280px;
+   }
+}
